@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Effects
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import Quickshell.Wayland
 import Quickshell
 import Quickshell.Services.Pam
@@ -138,11 +138,12 @@ WlSessionLock {
             smooth: false
             visible: true // Show the original for FastBlur input
         }
-        FastBlur {
+        MultiEffect {
+            blurEnabled: true
             anchors.fill: parent
             source: lockBgImage
-            radius: 48 // Adjust blur strength as needed
-            transparentBorder: true
+            blur: 48 // Adjust blur strength as needed
+            // transparentBorder: true
         }
         // Main content container (moved up, Rectangle removed)
         ColumnLayout {
@@ -167,8 +168,9 @@ WlSessionLock {
                     visible: false // Only show the masked version
                     asynchronous: true
                 }
-                OpacityMask {
+                MultiEffect {
                     anchors.fill: avatarImage
+                    maskEnabled: true
                     source: avatarImage
                     maskSource: Rectangle {
                         width: avatarImage.width
@@ -189,10 +191,11 @@ WlSessionLock {
                 }
                 // Glow effect
                 layer.enabled: true
-                layer.effect: Glow {
-                    color: Theme.accentPrimary
-                    radius: 8
-                    samples: 16
+                layer.effect: MultiEffect {
+                    shadowEnabled: true
+                    shadowColor: Theme.accentPrimary
+                    // radius: 8
+                    // samples: 16
                 }
             }
 

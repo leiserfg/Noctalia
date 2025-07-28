@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import qs.Services
 import qs.Settings
 
@@ -28,12 +28,13 @@ ShellRoot {
             smooth: true
             visible: wallpaperSource !== "" // Show the original for FastBlur input
         }
-        FastBlur {
+        MultiEffect {
+            blurEnabled : true
             anchors.fill: parent
             visible: wallpaperSource !== ""
             source: bgImage
-            radius: 24 // Adjust blur strength as needed
-            transparentBorder: true
+            blur: 24 // Adjust blur strength as needed
+            // transparentBorder: true
         }
     }
 }
