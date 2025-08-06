@@ -34,7 +34,7 @@ ColumnLayout {
                 Text {
                     anchors.centerIn: parent
                     text: expanded ? "expand_less" : "expand_more"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: Theme.fontSizeBody
                     color: Theme.accentPrimary
                 }

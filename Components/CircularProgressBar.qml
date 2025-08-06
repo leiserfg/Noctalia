@@ -112,7 +112,7 @@ Rectangle {
         anchors.rightMargin: -4
         anchors.verticalCenter: parent.verticalCenter
         text: notchIcon
-        font.family: "Material Symbols Outlined"
+        font.family: "Material Symbols Sharp"
         font.pixelSize: notchIconSize
         color: notchIconColor
         visible: hasNotch && notchIcon !== ""

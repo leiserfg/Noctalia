@@ -23,7 +23,7 @@ Rectangle {
 
             Text {
                 text: "image"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 20
                 color: Theme.accentPrimary
             }
@@ -408,7 +408,7 @@ Rectangle {
                     x: resizeComboBox.width - width - 12
                     y: resizeComboBox.topPadding + (resizeComboBox.availableHeight - height) / 2
                     text: "arrow_drop_down"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: Theme.textPrimary
                 }
@@ -511,7 +511,7 @@ Rectangle {
                     x: transitionTypeComboBox.width - width - 12
                     y: transitionTypeComboBox.topPadding + (transitionTypeComboBox.availableHeight - height) / 2
                     text: "arrow_drop_down"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: Theme.textPrimary
                 }

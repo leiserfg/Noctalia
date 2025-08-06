@@ -299,7 +299,7 @@ PanelWindow {
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             text: "close"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 14
                             color: Theme.textPrimary
                         }

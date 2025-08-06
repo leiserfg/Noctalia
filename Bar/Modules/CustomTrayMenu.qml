@@ -23,7 +23,8 @@ PopupWindow {
 
     // Recursive function to destroy all open submenus in delegate tree, safely avoiding infinite recursion
     function destroySubmenusRecursively(item) {
-        if (!item || !item.contentItem) return;
+        if (!item || !item.contentItem)
+            return;
         var children = item.contentItem.children;
         for (var i = 0; i < children.length; ++i) {
             var child = children[i];
@@ -58,105 +59,107 @@ PopupWindow {
     }
 
     Item {
-        anchors.fill: parent;
-        Keys.onEscapePressed: trayMenu.hideMenu();
+        anchors.fill: parent
+        Keys.onEscapePressed: trayMenu.hideMenu()
     }
 
     QsMenuOpener {
-        id: opener;
-        menu: trayMenu.menu;
+        id: opener
+        menu: trayMenu.menu
     }
 
     Rectangle {
-        id: bg;
-        anchors.fill: parent;
-        color: Theme.backgroundPrimary || "#222";
-        border.color: Theme.outline || "#444";
-        border.width: 1;
-        radius: 12;
-        z: 0;
+        id: bg
+        anchors.fill: parent
+        color: Theme.backgroundPrimary || "#222"
+        border.color: Theme.outline || "#444"
+        border.width: 1
+        radius: 12
+        z: 0
     }
 
     ListView {
-        id: listView;
-        anchors.fill: parent;
-        anchors.margins: 6;
-        spacing: 2;
-        interactive: false;
-        enabled: trayMenu.visible;
-        clip: true;
+        id: listView
+        anchors.fill: parent
+        anchors.margins: 6
+        spacing: 2
+        interactive: false
+        enabled: trayMenu.visible
+        clip: true
 
         model: ScriptModel {
             values: opener.children ? [...opener.children.values] : []
         }
 
         delegate: Rectangle {
-            id: entry;
-            required property var modelData;
+            id: entry
+            required property var modelData
 
-            width: listView.width;
-            height: (modelData?.isSeparator) ? 8 : 32;
-            color: "transparent";
-            radius: 12;
+            width: listView.width
+            height: (modelData?.isSeparator) ? 8 : 32
+            color: "transparent"
+            radius: 12
 
-            property var subMenu: null;
+            property var subMenu: null
 
             Rectangle {
-                anchors.centerIn: parent;
-                width: parent.width - 20;
-                height: 1;
-                color: Qt.darker(Theme.backgroundPrimary || "#222", 1.4);
-                visible: modelData?.isSeparator ?? false;
+                anchors.centerIn: parent
+                width: parent.width - 20
+                height: 1
+                color: Qt.darker(Theme.backgroundPrimary || "#222", 1.4)
+                visible: modelData?.isSeparator ?? false
             }
 
             Rectangle {
-                id: bg;
-                anchors.fill: parent;
-                color: mouseArea.containsMouse ? Theme.highlight : "transparent";
-                radius: 8;
-                visible: !(modelData?.isSeparator ?? false);
-                property color hoverTextColor: mouseArea.containsMouse ? Theme.onAccent : Theme.textPrimary;
+                id: bg
+                anchors.fill: parent
+                color: mouseArea.containsMouse ? Theme.highlight : "transparent"
+                radius: 8
+                visible: !(modelData?.isSeparator ?? false)
+                property color hoverTextColor: mouseArea.containsMouse ? Theme.onAccent : Theme.textPrimary
 
                 RowLayout {
-                    anchors.fill: parent;
-                    anchors.leftMargin: 12;
-                    anchors.rightMargin: 12;
-                    spacing: 8;
+                    anchors.fill: parent
+                    anchors.leftMargin: 12
+                    anchors.rightMargin: 12
+                    spacing: 8
 
                     Text {
-                        Layout.fillWidth: true;
-                        color: (modelData?.enabled ?? true) ? bg.hoverTextColor : Theme.textDisabled;
-                        text: modelData?.text ?? "";
-                        font.family: Theme.fontFamily;
-                        font.pixelSize: Theme.fontSizeSmall;
-                        verticalAlignment: Text.AlignVCenter;
-                        elide: Text.ElideRight;
+                        Layout.fillWidth: true
+                        color: (modelData?.enabled ?? true) ? bg.hoverTextColor : Theme.textDisabled
+                        text: modelData?.text ?? ""
+                        font.family: Theme.fontFamily
+                        font.pixelSize: Theme.fontSizeSmall
+                        verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
                     }
 
                     Image {
-                        Layout.preferredWidth: 16;
-                        Layout.preferredHeight: 16;
-                        source: modelData?.icon ?? "";
-                        visible: (modelData?.icon ?? "") !== "";
-                        fillMode: Image.PreserveAspectFit;
+                        Layout.preferredWidth: 16
+                        Layout.preferredHeight: 16
+                        source: modelData?.icon ?? ""
+                        visible: (modelData?.icon ?? "") !== ""
+                        fillMode: Image.PreserveAspectFit
                     }
 
                     Text {
-                        // Material Symbols Outlined chevron right for submenu
-                        text: modelData?.hasChildren ? "menu" : "";
-                        font.family: "Material Symbols Outlined";
-                        font.pixelSize: 18;
-                        verticalAlignment: Text.AlignVCenter;
-                        visible: modelData?.hasChildren ?? false;
-                        color: Theme.textPrimary;
+                        id: txt
+                        // Material Symbols Sharp chevron right for submenu
+                        text: modelData?.hasChildren ? "menu" : ""
+                        font.family: "Material Symbols Sharp"
+                        font.pixelSize: 18
+                        verticalAlignment: Text.AlignVCenter
+                        visible: modelData?.hasChildren ?? false
+                        color: Theme.textPrimary
+                        Component.onCompleted: console.log(txt.font)
                     }
                 }
 
                 MouseArea {
-                    id: mouseArea;
-                    anchors.fill: parent;
-                    hoverEnabled: true;
-                    enabled: (modelData?.enabled ?? true) && !(modelData?.isSeparator ?? false) && trayMenu.visible;
+                    id: mouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    enabled: (modelData?.enabled ?? true) && !(modelData?.isSeparator ?? false) && trayMenu.visible
 
                     onClicked: {
                         if (modelData && !modelData.isSeparator) {
@@ -170,7 +173,8 @@ PopupWindow {
                     }
 
                     onEntered: {
-                        if (!trayMenu.visible) return;
+                        if (!trayMenu.visible)
+                            return;
 
                         if (modelData?.hasChildren) {
                             // Close sibling submenus immediately
@@ -243,23 +247,23 @@ PopupWindow {
     }
 
     Component {
-        id: subMenuComponent;
+        id: subMenuComponent
 
         PopupWindow {
-            id: subMenu;
-            implicitWidth: 180;
-            implicitHeight: Math.max(40, listView.contentHeight + 12);
-            visible: false;
-            color: "transparent";
+            id: subMenu
+            implicitWidth: 180
+            implicitHeight: Math.max(40, listView.contentHeight + 12)
+            visible: false
+            color: "transparent"
 
-            property QsMenuHandle menu;
-            property var anchorItem: null;
-            property real anchorX;
-            property real anchorY;
+            property QsMenuHandle menu
+            property var anchorItem: null
+            property real anchorX
+            property real anchorY
 
-            anchor.item: anchorItem ? anchorItem : null;
-            anchor.rect.x: anchorX;
-            anchor.rect.y: anchorY;
+            anchor.item: anchorItem ? anchorItem : null
+            anchor.rect.x: anchorX
+            anchor.rect.y: anchorY
 
             function showAt(item, x, y) {
                 if (!item) {
@@ -292,104 +296,104 @@ PopupWindow {
             }
 
             Item {
-                anchors.fill: parent;
-                Keys.onEscapePressed: subMenu.hideMenu();
+                anchors.fill: parent
+                Keys.onEscapePressed: subMenu.hideMenu()
             }
 
             QsMenuOpener {
-                id: opener;
-                menu: subMenu.menu;
+                id: opener
+                menu: subMenu.menu
             }
 
             Rectangle {
-                id: bg;
-                anchors.fill: parent;
-                color: Theme.backgroundPrimary || "#222";
-                border.color: Theme.outline || "#444";
-                border.width: 1;
-                radius: 12;
-                z: 0;
+                id: bg
+                anchors.fill: parent
+                color: Theme.backgroundPrimary || "#222"
+                border.color: Theme.outline || "#444"
+                border.width: 1
+                radius: 12
+                z: 0
             }
 
             ListView {
-                id: listView;
-                anchors.fill: parent;
-                anchors.margins: 6;
-                spacing: 2;
-                interactive: false;
-                enabled: subMenu.visible;
-                clip: true;
+                id: listView
+                anchors.fill: parent
+                anchors.margins: 6
+                spacing: 2
+                interactive: false
+                enabled: subMenu.visible
+                clip: true
 
                 model: ScriptModel {
-                    values: opener.children ? [...opener.children.values] : [];
+                    values: opener.children ? [...opener.children.values] : []
                 }
 
                 delegate: Rectangle {
-                    id: entry;
-                    required property var modelData;
+                    id: entry
+                    required property var modelData
 
-                    width: listView.width;
-                    height: (modelData?.isSeparator) ? 8 : 32;
-                    color: "transparent";
-                    radius: 12;
+                    width: listView.width
+                    height: (modelData?.isSeparator) ? 8 : 32
+                    color: "transparent"
+                    radius: 12
 
-                    property var subMenu: null;
+                    property var subMenu: null
 
                     Rectangle {
-                        anchors.centerIn: parent;
-                        width: parent.width - 20;
-                        height: 1;
-                        color: Qt.darker(Theme.surfaceVariant || "#222", 1.4);
-                        visible: modelData?.isSeparator ?? false;
+                        anchors.centerIn: parent
+                        width: parent.width - 20
+                        height: 1
+                        color: Qt.darker(Theme.surfaceVariant || "#222", 1.4)
+                        visible: modelData?.isSeparator ?? false
                     }
 
                     Rectangle {
-                        id: bg;
-                        anchors.fill: parent;
-                        color: mouseArea.containsMouse ? Theme.highlight : "transparent";
-                        radius: 8;
-                        visible: !(modelData?.isSeparator ?? false);
-                        property color hoverTextColor: mouseArea.containsMouse ? Theme.onAccent : Theme.textPrimary;
+                        id: bg
+                        anchors.fill: parent
+                        color: mouseArea.containsMouse ? Theme.highlight : "transparent"
+                        radius: 8
+                        visible: !(modelData?.isSeparator ?? false)
+                        property color hoverTextColor: mouseArea.containsMouse ? Theme.onAccent : Theme.textPrimary
 
                         RowLayout {
-                            anchors.fill: parent;
-                            anchors.leftMargin: 12;
-                            anchors.rightMargin: 12;
-                            spacing: 8;
+                            anchors.fill: parent
+                            anchors.leftMargin: 12
+                            anchors.rightMargin: 12
+                            spacing: 8
 
                             Text {
-                                Layout.fillWidth: true;
-                                color: (modelData?.enabled ?? true) ? bg.hoverTextColor : Theme.textDisabled;
-                                text: modelData?.text ?? "";
-                                font.family: Theme.fontFamily;
-                                font.pixelSize: Theme.fontSizeSmall;
-                                verticalAlignment: Text.AlignVCenter;
-                                elide: Text.ElideRight;
+                                Layout.fillWidth: true
+                                color: (modelData?.enabled ?? true) ? bg.hoverTextColor : Theme.textDisabled
+                                text: modelData?.text ?? ""
+                                font.family: Theme.fontFamily
+                                font.pixelSize: Theme.fontSizeSmall
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
                             }
 
                             Image {
-                                Layout.preferredWidth: 16;
-                                Layout.preferredHeight: 16;
-                                source: modelData?.icon ?? "";
-                                visible: (modelData?.icon ?? "") !== "";
-                                fillMode: Image.PreserveAspectFit;
+                                Layout.preferredWidth: 16
+                                Layout.preferredHeight: 16
+                                source: modelData?.icon ?? ""
+                                visible: (modelData?.icon ?? "") !== ""
+                                fillMode: Image.PreserveAspectFit
                             }
 
                             Text {
-                                text: modelData?.hasChildren ? "\uE5CC" : "";
-                                font.family: "Material Symbols Outlined";
-                                font.pixelSize: 18;
-                                verticalAlignment: Text.AlignVCenter;
-                                visible: modelData?.hasChildren ?? false;
-                                color: Theme.textPrimary;
+                                text: modelData?.hasChildren ? "\uE5CC" : ""
+                                font.family: "Material Symbols Sharp"
+                                font.pixelSize: 18
+                                verticalAlignment: Text.AlignVCenter
+                                visible: modelData?.hasChildren ?? false
+                                color: Theme.textPrimary
                             }
                         }
 
                         MouseArea {
-                            id: mouseArea;
-                            anchors.fill: parent;
-                            hoverEnabled: true;
-                            enabled: (modelData?.enabled ?? true) && !(modelData?.isSeparator ?? false) && subMenu.visible;
+                            id: mouseArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            enabled: (modelData?.enabled ?? true) && !(modelData?.isSeparator ?? false) && subMenu.visible
 
                             onClicked: {
                                 if (modelData && !modelData.isSeparator) {
@@ -402,7 +406,8 @@ PopupWindow {
                             }
 
                             onEntered: {
-                                if (!subMenu.visible) return;
+                                if (!subMenu.visible)
+                                    return;
 
                                 if (modelData?.hasChildren) {
                                     for (let i = 0; i < listView.contentItem.children.length; i++) {

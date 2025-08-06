@@ -32,7 +32,7 @@ Rectangle {
                 id: perfIcon
                 anchors.centerIn: parent
                 text: "speed"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 22
                 color: (typeof PowerProfiles !== 'undefined' && PowerProfiles.profile === PowerProfile.Performance) || perfMouseArea.containsMouse
                     ? Theme.backgroundPrimary
@@ -78,7 +78,7 @@ Rectangle {
                 id: balIcon
                 anchors.centerIn: parent
                 text: "balance"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 22
                 color: (typeof PowerProfiles !== 'undefined' && PowerProfiles.profile === PowerProfile.Balanced) || balMouseArea.containsMouse
                     ? Theme.backgroundPrimary
@@ -124,7 +124,7 @@ Rectangle {
                 id: saveIcon
                 anchors.centerIn: parent
                 text: "eco"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 22
                 color: (typeof PowerProfiles !== 'undefined' && PowerProfiles.profile === PowerProfile.PowerSaver) || saveMouseArea.containsMouse
                     ? Theme.backgroundPrimary

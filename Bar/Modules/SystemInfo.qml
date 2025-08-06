@@ -18,7 +18,7 @@ Row {
 
         Text {
             id: cpuUsageIcon
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: Theme.fontSizeBody
             text: "speed"
             verticalAlignment: Text.AlignVCenter
@@ -42,7 +42,7 @@ Row {
         id: cpuTempLayout
         spacing: 3
         Text {
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: Theme.fontSizeBody
             text: "thermometer"
             verticalAlignment: Text.AlignVCenter
@@ -65,7 +65,7 @@ Row {
         id: memoryUsageLayout
         spacing: 3
         Text {
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: Theme.fontSizeBody
             text: "memory"
             color: Theme.accentPrimary

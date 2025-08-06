@@ -88,7 +88,7 @@ Item {
 
         Text {
             anchors.centerIn: parent
-            font.family: showPill ? "Material Symbols Rounded" : "Material Symbols Outlined"
+            font.family: showPill ? "Material Symbols Rounded" : "Material Symbols Sharp"
             font.pixelSize: Theme.fontSizeSmall
             text: revealPill.icon
             color: showPill ? iconTextColor : collapsedIconColor

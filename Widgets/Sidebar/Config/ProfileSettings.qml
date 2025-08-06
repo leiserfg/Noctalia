@@ -24,7 +24,7 @@ Rectangle {
             spacing: 12
             Text {
                 text: "settings"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 20
                 color: Theme.accentPrimary
             }
@@ -540,7 +540,7 @@ Rectangle {
                     x: visualizerTypeComboBox.width - width - 12
                     y: visualizerTypeComboBox.topPadding + (visualizerTypeComboBox.availableHeight - height) / 2
                     text: "arrow_drop_down"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: Theme.textPrimary
                 }

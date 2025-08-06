@@ -449,7 +449,7 @@ Item {
         Text {
             anchors.centerIn: parent
             text: "wifi"
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: 22
             color: wifiButtonArea.containsMouse ? Theme.backgroundPrimary : Theme.accentPrimary
             verticalAlignment: Text.AlignVCenter
@@ -495,7 +495,7 @@ Item {
                     Layout.rightMargin: 16
                     Text {
                         text: "wifi"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 32
                         color: Theme.accentPrimary
                     }
@@ -535,7 +535,7 @@ Item {
                         Text {
                             anchors.centerIn: parent
                             text: "close"
-                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Sharp"
                             font.pixelSize: 20
                             color: closeButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                         }
@@ -614,7 +614,7 @@ Item {
                                             spacing: 12
                                             Text {
                                                 text: signalIcon(modelData.signal)
-                                                font.family: "Material Symbols Outlined"
+                                                font.family: "Material Symbols Sharp"
                                                 font.pixelSize: 20
                                                 color: networkMouseArea.containsMouse || (modelData.ssid === wifiLogic.passwordPromptSsid && wifiLogic.showPasswordPrompt) ? Theme.backgroundPrimary : (modelData.connected ? Theme.accentPrimary : Theme.textSecondary)
                                                 verticalAlignment: Text.AlignVCenter
@@ -644,7 +644,7 @@ Item {
                                                             Text {
                                                                 visible: wifiLogic.connectStatus === "success"
                                                                 text: "check_circle"
-                                                                font.family: "Material Symbols Outlined"
+                                                                font.family: "Material Symbols Sharp"
                                                                 font.pixelSize: 18
                                                                 color: "#43a047"
                                                                 verticalAlignment: Text.AlignVCenter
@@ -652,7 +652,7 @@ Item {
                                                             Text {
                                                                 visible: wifiLogic.connectStatus === "error"
                                                                 text: "error"
-                                                                font.family: "Material Symbols Outlined"
+                                                                font.family: "Material Symbols Sharp"
                                                                 font.pixelSize: 18
                                                                 color: Theme.error
                                                                 verticalAlignment: Text.AlignVCenter
@@ -892,7 +892,7 @@ Item {
                                                 Text {
                                                     anchors.centerIn: parent
                                                     text: modelData.connected ? "wifi_off" : "check"
-                                                    font.family: "Material Symbols Outlined"
+                                                    font.family: "Material Symbols Sharp"
                                                     font.pixelSize: 20
                                                     color: Theme.backgroundPrimary
                                                 }

@@ -40,7 +40,7 @@ Item {
         Text {
             anchors.centerIn: parent
             text: "bluetooth"
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: 22
             color: bluetoothButtonArea.containsMouse
                 ? Theme.backgroundPrimary
@@ -105,7 +105,7 @@ Item {
                     Layout.rightMargin: 16
                     Text {
                         text: "bluetooth"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 32
                         color: Theme.accentPrimary
                     }
@@ -125,7 +125,7 @@ Item {
                         Text {
                             anchors.centerIn: parent
                             text: "close"
-                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Sharp"
                             font.pixelSize: 20
                             color: closeButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                         }
@@ -214,7 +214,7 @@ Item {
                                         horizontalAlignment: Text.AlignHCenter
                                         verticalAlignment: Text.AlignVCenter
                                         text: modelData.connected ? "bluetooth" : "bluetooth_disabled"
-                                        font.family: "Material Symbols Outlined"
+                                        font.family: "Material Symbols Sharp"
                                         font.pixelSize: 20
                                         color: modelData.connected ? Theme.accentPrimary : Theme.textSecondary
                                     }

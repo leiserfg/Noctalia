@@ -57,7 +57,7 @@ Item {
 
         Text {
             text: batteryIcon()
-            font.family: "Material Symbols Outlined"
+            font.family: "Material Symbols Sharp"
             font.pixelSize: 28
             color: charging ? Theme.accentPrimary : Theme.textSecondary
             verticalAlignment: Text.AlignVBottom

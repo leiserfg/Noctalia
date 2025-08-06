@@ -74,11 +74,13 @@ Item {
                     }
                 }
 
+
+                Component.onCompleted: console.log(this.font)
                 // Fallback icon
                 Text {
                     anchors.centerIn: parent
                     text: "music_note"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 14
                     color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.4)
                     visible: !albumArt.visible
@@ -95,7 +97,7 @@ Item {
                     Text {
                         anchors.centerIn: parent
                         text: MusicManager.isPlaying ? "pause" : "play_arrow"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 14
                         color: "white"
                     }

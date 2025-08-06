@@ -81,7 +81,7 @@ PanelWithOverlay {
                                 spacing: 8
                                 Text {
                                     text: "volume_up"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: 16
                                     color: (Pipewire.defaultAudioSink && Pipewire.defaultAudioSink.id === modelData.id) ? Theme.accentPrimary : Theme.textPrimary
                                     Layout.alignment: Qt.AlignVCenter
@@ -169,7 +169,7 @@ PanelWithOverlay {
                                 spacing: 8
                                 Text {
                                     text: "mic"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: 16
                                     color: (Pipewire.defaultAudioSource && Pipewire.defaultAudioSource.id === modelData.id) ? Theme.accentPrimary : Theme.textPrimary
                                     Layout.alignment: Qt.AlignVCenter

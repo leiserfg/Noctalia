@@ -94,7 +94,7 @@ Rectangle {
                     Text {
                         anchors.centerIn: parent
                         text: "power_settings_new"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 16
                         color: systemButtonArea.containsMouse || systemButtonArea.pressed ? Theme.backgroundPrimary : Theme.accentPrimary
                     }
@@ -160,7 +160,7 @@ Rectangle {
 
                         Text {
                             text: "lock_outline"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 16
                             color: lockButtonArea.containsMouse ? Theme.onAccent : Theme.textPrimary
                         }
@@ -200,7 +200,7 @@ Rectangle {
 
                         Text {
                             text: "bedtime"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 16
                             color: suspendButtonArea.containsMouse ? Theme.onAccent : Theme.textPrimary
                         }
@@ -239,7 +239,7 @@ Rectangle {
 
                         Text {
                             text: "refresh"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 16
                             color: rebootButtonArea.containsMouse ? Theme.onAccent : Theme.textPrimary
                         }
@@ -279,7 +279,7 @@ Rectangle {
 
                         Text {
                             text: "exit_to_app"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 16
                             color: logoutButtonArea.containsMouse ? Theme.onAccent : Theme.textPrimary
                         }
@@ -318,7 +318,7 @@ Rectangle {
 
                         Text {
                             text: "power_settings_new"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 16
                             color: shutdownButtonArea.containsMouse ? Theme.onAccent : Theme.textPrimary
                         }

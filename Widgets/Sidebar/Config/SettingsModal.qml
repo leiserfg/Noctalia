@@ -43,7 +43,7 @@ PanelWindow {
                     spacing: 20
                     Text {
                         text: "settings"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 32
                         color: Theme.accentPrimary
                     }
@@ -64,7 +64,7 @@ PanelWindow {
                         Text {
                             anchors.centerIn: parent
                             text: "close"
-                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Sharp"
                             font.pixelSize: 20
                             color: closeButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                         }

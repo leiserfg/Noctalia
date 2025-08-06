@@ -51,7 +51,7 @@ PanelWindow {
                 Layout.preferredHeight: 48
                 Text {
                     text: "image"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: Theme.fontSizeHeader
                     color: Theme.accentPrimary
                 }
@@ -73,7 +73,7 @@ PanelWindow {
                     Text {
                         anchors.centerIn: parent
                         text: "close"
-                        font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                        font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Sharp"
                         font.pixelSize: Theme.fontSizeBody
                         color: closeButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                     }

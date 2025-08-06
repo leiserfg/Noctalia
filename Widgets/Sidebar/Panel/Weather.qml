@@ -68,7 +68,7 @@ Rectangle {
                     Text {
                         id: weatherIcon
                         text: weatherData && weatherData.current_weather ? materialSymbolForCode(weatherData.current_weather.weathercode) : "cloud"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 28
                         verticalAlignment: Text.AlignVCenter
                         color: Theme.accentPrimary
@@ -143,7 +143,7 @@ Rectangle {
                         Text {
                             // Material Symbol icon
                             text: materialSymbolForCode(weatherData.daily.weathercode[index])
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: 22
                             color: Theme.accentPrimary
                             horizontalAlignment: Text.AlignHCenter

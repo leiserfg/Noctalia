@@ -229,7 +229,7 @@ PanelWithOverlay {
                         spacing: 10
                         Text {
                             text: "search"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: Theme.fontSizeHeader
                             color: searchField.activeFocus ? Theme.accentPrimary : Theme.textSecondary
                             verticalAlignment: Text.AlignVCenter
@@ -355,7 +355,7 @@ PanelWithOverlay {
                                         anchors.centerIn: parent
                                         visible: !modelData.isCalculator && !parent.iconLoaded
                                         text: "broken_image"
-                                        font.family: "Material Symbols Outlined"
+                                        font.family: "Material Symbols Sharp"
                                         font.pixelSize: Theme.fontSizeHeader
                                         color: Theme.accentPrimary
                                     }
@@ -391,7 +391,7 @@ PanelWithOverlay {
                                 }
                                 Text {
                                     text: modelData.isCalculator ? "content_copy" : "chevron_right"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: Theme.fontSizeBody
                                     color: (hovered || isSelected)
                                         ? Theme.onAccent
@@ -471,7 +471,7 @@ PanelWithOverlay {
                                 Text {
                                     anchors.centerIn: parent
                                     text: "star"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: Theme.fontSizeSmall
                                     color: (parent.MouseArea.containsMouse || hovered || isSelected)
                                         ? Theme.onAccent

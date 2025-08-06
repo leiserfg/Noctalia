@@ -363,7 +363,7 @@ WlSessionLock {
 
                     Text {
                         text: weatherData && weatherData.current_weather ? materialSymbolForCode(weatherData.current_weather.weathercode) : "cloud"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 28
                         color: Theme.accentPrimary
                         verticalAlignment: Text.AlignVCenter
@@ -444,7 +444,7 @@ WlSessionLock {
                 Text {
                     anchors.centerIn: parent
                     text: "power_settings_new"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: shutdownArea.containsMouse ? Theme.onAccent : Theme.error
                 }
@@ -470,7 +470,7 @@ WlSessionLock {
                 Text {
                     anchors.centerIn: parent
                     text: "refresh"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: rebootArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                 }
@@ -496,7 +496,7 @@ WlSessionLock {
                 Text {
                     anchors.centerIn: parent
                     text: "exit_to_app"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: logoutArea.containsMouse ? Theme.onAccent : Theme.accentSecondary
                 }

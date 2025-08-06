@@ -217,7 +217,7 @@ PanelWithOverlay {
                             spacing: 6
                             Text {
                                 text: "delete_sweep"
-                                font.family: "Material Symbols Outlined"
+                                font.family: "Material Symbols Sharp"
                                 font.pixelSize: 14
                                 color: clearAllMouseArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                                 verticalAlignment: Text.AlignVCenter

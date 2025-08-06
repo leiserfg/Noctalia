@@ -49,7 +49,7 @@ Rectangle {
 
                     Text {
                         text: "settings"
-                        font.family: settingsButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                        font.family: settingsButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Sharp"
                         font.pixelSize: 16
                         color: settingsButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                     }
@@ -93,7 +93,7 @@ Rectangle {
 
                     Text {
                         text: isRecording ? "radio_button_checked" : "radio_button_unchecked"
-                        font.family: (isRecording || recorderButtonArea.containsMouse) ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                        font.family: (isRecording || recorderButtonArea.containsMouse) ? "Material Symbols Rounded" : "Material Symbols Sharp"
                         font.pixelSize: 16
                         color: isRecording || recorderButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                     }
@@ -140,7 +140,7 @@ Rectangle {
 
                     Text {
                         text: "image"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: 16
                         color: wallpaperButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                     }

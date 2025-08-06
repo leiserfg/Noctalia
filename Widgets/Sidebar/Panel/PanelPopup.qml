@@ -214,7 +214,7 @@ PanelWithOverlay {
                                 Text {
                                     anchors.centerIn: parent
                                     text: "wifi"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: 22
                                     color: wifiButtonArea.containsMouse ? Theme.backgroundPrimary : Theme.accentPrimary
                                     verticalAlignment: Text.AlignVCenter
@@ -249,7 +249,7 @@ PanelWithOverlay {
                                 Text {
                                     anchors.centerIn: parent
                                     text: "bluetooth"
-                                    font.family: "Material Symbols Outlined"
+                                    font.family: "Material Symbols Sharp"
                                     font.pixelSize: 22
                                     color: bluetoothButtonArea.containsMouse ? Theme.backgroundPrimary : Theme.accentPrimary
                                     verticalAlignment: Text.AlignVCenter

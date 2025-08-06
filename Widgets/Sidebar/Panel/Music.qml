@@ -30,7 +30,7 @@ Rectangle {
 
                 Text {
                     text: "music_note"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: Theme.fontSizeHeader
                     color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.3)
                     Layout.alignment: Qt.AlignHCenter
@@ -86,7 +86,7 @@ Rectangle {
                     x: playerSelector.width - width - 12
                     y: playerSelector.topPadding + (playerSelector.availableHeight - height) / 2
                     text: "arrow_drop_down"
-                    font.family: "Material Symbols Outlined"
+                    font.family: "Material Symbols Sharp"
                     font.pixelSize: 24
                     color: Theme.textPrimary
                 }
@@ -212,7 +212,7 @@ Rectangle {
                         Text {
                             anchors.centerIn: parent
                             text: "album"
-                            font.family: "Material Symbols Outlined"
+                            font.family: "Material Symbols Sharp"
                             font.pixelSize: Theme.fontSizeBody
                             color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.4)
                             visible: !albumArt.visible
@@ -359,7 +359,7 @@ Rectangle {
                     Text {
                         anchors.centerIn: parent
                         text: "skip_previous"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: Theme.fontSizeCaption
                         color: previousButton.enabled ? Theme.accentPrimary : Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.3)
                     }
@@ -386,7 +386,7 @@ Rectangle {
                     Text {
                         anchors.centerIn: parent
                         text: MusicManager.isPlaying ? "pause" : "play_arrow"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: Theme.fontSizeBody
                         color: playButton.enabled ? Theme.accentPrimary : Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.3)
                     }
@@ -413,7 +413,7 @@ Rectangle {
                     Text {
                         anchors.centerIn: parent
                         text: "skip_next"
-                        font.family: "Material Symbols Outlined"
+                        font.family: "Material Symbols Sharp"
                         font.pixelSize: Theme.fontSizeCaption
                         color: nextButton.enabled ? Theme.accentPrimary : Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.3)
                     }

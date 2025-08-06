@@ -21,7 +21,7 @@ Rectangle {
 
             Text {
                 text: "wb_sunny"
-                font.family: "Material Symbols Outlined"
+                font.family: "Material Symbols Sharp"
                 font.pixelSize: 20
                 color: Theme.accentPrimary
             }
